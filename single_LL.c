@@ -37,15 +37,23 @@ void display_sll() // Display All Elements of The list
 {
     int i = 0;
     current_node = head;
-    while (current_node->next != NULL)
+    if (current_node != NULL)
     {
-        ++i;
-        printf("Data of The %d Node is %d with ID Of %d\n", i, current_node->data, current_node->id);
+        while (current_node->next != NULL)
+        {
+            ++i;
+            printf("Data of The %d Node is %d with ID Of %d\n", i, current_node->data, current_node->id);
+            printf("--------------------------------------------------\n");
+            current_node = current_node->next;
+        }
+        printf("Data of The %d Node is %d with ID Of %d\n", ++i, current_node->data, current_node->id);
         printf("--------------------------------------------------\n");
-        current_node = current_node->next;
     }
-    printf("Data of The %d Node is %d with ID Of %d\n", ++i, current_node->data, current_node->id);
-    printf("--------------------------------------------------\n");
+    else
+    {
+        printf("List is Empty, There is nothing to display!\n");
+        printf("--------------------------------------------------\n");
+    }
 }
 
 int insert_node() // Insert any node at any specific required position
@@ -236,7 +244,7 @@ int delete_node()
 
         // Here we need 2 pointers to delete from End
         list_length = get_length_list();
-
+        i = 1;
         if (pos == list_length) // Deleting the last Node
         {
             printf("Deleting Desired Node From End....\n");
@@ -247,6 +255,7 @@ int delete_node()
                 prev_node = prev_node->next;
                 i++;
             }
+            printf("%d\n",prev_node -> next);
             current_node = prev_node->next;
             prev_node->next = NULL;
             free(current_node); // Deleted the node
@@ -583,7 +592,7 @@ int entry_number_of_elements()
 }
 int User_Choice(int choice)
 {
-
+    int list_length;
     switch (choice)
     {
     case Choice_Create_SLL:
@@ -611,13 +620,15 @@ int User_Choice(int choice)
         read_or_change_data_by_pos(Choice_Change);
         break;
     case Choice_Get_List_Length:
-        get_length_list();
+        list_length = get_length_list();
+        printf("List Size is %d\n",list_length);
         break;
     case Choice_Dislpay_List:
         display_sll();
         break;
     case Exit_Code_Choice:
         return Exit_Code_Choice;
+        break;
     default:
         return 0;
     }

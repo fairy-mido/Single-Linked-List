@@ -21,8 +21,8 @@
 #define Choice_Change_Data_By_ID    7
 #define Choice_Change_Data_By_pos   8 
 #define Choice_Get_List_Length      9
-#define Choice_Dislpay_List         0
-#define Exit_Code_Choice            10
+#define Choice_Dislpay_List         10
+#define Exit_Code_Choice            11
 
 
 #define Choice_Change 1

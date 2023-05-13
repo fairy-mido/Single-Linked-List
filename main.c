@@ -2,11 +2,10 @@
 #include <stdlib.h>
 #include "Single_LL.h"
 
-
 int main(void)
 {
 
-    int i,choice,exit_code;
+    int i, choice, exit_code;
     // sll_node *current_node,entry_data;
     // int yt = entry_number_of_elements();
     // display_sll();
@@ -31,26 +30,35 @@ int main(void)
     // // read_data_by_pos(3);
     // search_4_data(9000);
     // search_4_data(123);
-    while(1)
+    while (1)
     {
-        printf("Enter Number Preceeding the Operation you want to execute!\n");
-        // printf("1-");
-        while(1)
+        printf("---------------------------------------------------------------------\n");
+        printf("1- Create List   2- Insert Node    3- Delete Node 4- Search for Data\n");
+        printf("---------------------------------------------------------------------\n");
+        printf("5- Read Data by ID      6- Read Data By Pos     7- Change Data By ID\n");
+        printf("---------------------------------------------------------------------\n");
+        printf("8- Change Data By Pos   9- List Size       10- Display List Elements\n");
+        printf("---------------------------------------------------------------------\n");
+        printf("\t\t      11- Exit Whole Code\n");
+        printf("---------------------------------------------------------------------\n");
+        printf("Enter Number Preceeding the Operation you want to execute : ");
+        while (1)
         {
-        scanf("%d",&choice);
-        printf("--------------------------------------------------\n");
-        if((choice > 10)||(choice < 0))
-        {
-            // Nothing
-        }
-        else
-        {
-            break;
-            // Correct Choice
-        }
+            scanf("%d", &choice);
+            printf("--------------------------------------------------\n");
+            if ((choice > 11) || (choice < 0))
+            {
+                // Nothing
+                printf("Please, Enter The Correct Choice!\n");
+            }
+            else
+            {
+                break;
+                // Correct Choice
+            }
         }
         exit_code = User_Choice(choice);
-        if(exit_code == Exit_Code_Choice)
+        if (exit_code == Exit_Code_Choice)
         {
             break;
         }
