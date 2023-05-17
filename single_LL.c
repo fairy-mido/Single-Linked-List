@@ -245,7 +245,7 @@ int delete_node()
         // Here we need 2 pointers to delete from End
         list_length = get_length_list();
         i = 1;
-        if (pos == list_length) // Deleting the last Node
+        if ((pos == list_length)&&(list_length != 1)) // Deleting the last Node
         {
             printf("Deleting Desired Node From End....\n");
             printf("--------------------------------------------------\n");
@@ -263,13 +263,14 @@ int delete_node()
             printf("--------------------------------------------------\n");
             return Success;
         }
-        else if (pos == 1) // Deleting From Begining
+        else if ((pos == 1) || (list_length >= 1)) // Deleting From Begining
         {
             if (pos == list_length) // One Node In the List
             {
                 printf("Deleting Desired Node From Begining....\n");
                 printf("--------------------------------------------------\n");
                 free(head);
+                head = NULL;
                 printf("Node has successfully been deleted!\n");
                 printf("--------------------------------------------------\n");
             }

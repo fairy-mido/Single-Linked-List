@@ -1,5 +1,5 @@
-#ifndef SINGLE_LL_H_INCLUDED
-#define SINGLE_LL_H_INCLUDED
+#ifndef SINGLE_LL_H_
+#define SINGLE_LL_H_
 
 #define First_Node_Created      1
 
